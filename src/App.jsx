@@ -24,7 +24,6 @@ export default function App() {
   const [flagAudiodesc, setFlagAudiodesc] = useState(true);
 
   useEffect(() => {
-    localStorage.setItem('sportName', "Vôlei")
     if (navigate) {
       navigate("/tvAbertaSeg");
     }

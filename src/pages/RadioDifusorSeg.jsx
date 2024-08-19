@@ -8,10 +8,10 @@ import IconBordered from "../components/IconBordered";
 export default function RadioDifusor() {
     const { load, pause } = useAudioPlayer();
     const videoRef = useRef(null);
-    const [name, setName] = useState(localStorage.getItem("sportName") ? localStorage.getItem("sportName") : "Tênis");
-    const [flag, setFlag] = useState(true);
+    const [name, setName] = useState(localStorage.getItem("sportName") ? localStorage.getItem("sportName") : "Ciclismo");
+    const [flag, setFlag] = useState(false);
     const [showRecs, setShowRecs] = useState(false);
-    const [showSportMenu, setShowSportMenu] = useState(true);
+    const [showSportMenu, setShowSportMenu] = useState(false);
     const [currentVideo, setCurrentVideo] = useState(sportRecommendations[name][0][0]);
     const currentRowIndexRef = useRef(0);
     const currentCardIndexRef = useRef(0)
@@ -93,7 +93,10 @@ export default function RadioDifusor() {
 
             rowRefs[currentRowIndex].current[currentCardIndex].focus();
         };
-
+        const videoElement = videoRef.current;
+        videoElement.addEventListener("click", (event)=>{
+            videoElement.play()
+        })
         window.addEventListener('keydown', handleKeyDown);
 
         return () => {
@@ -122,7 +125,6 @@ export default function RadioDifusor() {
 
     useEffect(() => {
         const videoElement = videoRef.current;
-
         if (videoElement) {
             videoElement.muted = false;
             videoElement.load();
@@ -175,7 +177,7 @@ export default function RadioDifusor() {
                 </div>
             </div>
             {console.log(currentVideo)}
-            <video ref={videoRef} autoPlay muted loop style={flag ? VideoStyle : fullVideoStyle}>
+            <video ref={videoRef} autoPlay={true} muted={true} loop style={flag ? VideoStyle : fullVideoStyle}>
                 <source src={currentVideo} type="video/mp4" />
             </video>
             {showRecs &&
