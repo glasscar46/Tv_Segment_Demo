@@ -8,3 +8,8 @@
 - Run the application ```yarn run  dev```
 - Open the application url: should be initially http://localhost:5173/
 - Due to google policy on video autoplay, on first load and subsequent manual reloads of the webpage, the videos will not autoplay, simply click on the video to play video.
+
+### Controls
+- ArrowUP button: Displays the recoomendations
+- ArrowDown button: Hides the recommendations
+- ShiftLeft/ShiftRight: shows the Sport Selection Menu and Redimensions the video.
