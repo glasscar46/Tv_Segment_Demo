@@ -10,6 +10,6 @@
 - Due to google policy on video autoplay, on first load and subsequent manual reloads of the webpage, the videos will not autoplay, simply click on the video to play video.
 
 ### Controls
-- ArrowUP button: Displays the recoomendations
-- ArrowDown button: Hides the recommendations
-- ShiftLeft/ShiftRight: shows the Sport Selection Menu and Redimensions the video.
+- ArrowUP button: Displays the Sport Selection Menu and Redimensions the video
+- ArrowDown button: Hides the Sport Selection Menu and Redimensions the video
+- Enter or NumpadEnter button: Tuggles the video recommendations. if sport selection is enabled, it shows the recommendations abd hides the sport selection menu and.

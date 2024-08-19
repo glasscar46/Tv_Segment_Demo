@@ -108,6 +108,7 @@ export default function RadioDifusor() {
         document.addEventListener("keydown", (event) => {
             if (event.code === "ArrowDown") {
                 setFlag(true)
+                setShowRecs(false)
                 event.preventDefault();
             }
             if (event.code === "ArrowUp") {
@@ -115,7 +116,8 @@ export default function RadioDifusor() {
                 setShowRecs(false)
                 event.preventDefault();
             }
-            if (event.code === "ShiftLeft" || event.code === "ShiftRight") {
+            if (event.code === "Enter" || event.code === "NumpadEnter") {
+                setFlag(false)
                 setShowRecs(!showRecs)
                 event.preventDefault();
             }
@@ -142,7 +144,7 @@ export default function RadioDifusor() {
                         !showSportMenu ?
                             (<div>
                                 <img src={olympicSports.find((s) => s.name == name).icon} alt="Radio Difusor Icon" />
-                                <div className="flex flex-row justify-start font-normal gap-1 items-center mt-10" onClick={() => setShowSportMenu(true)}>
+                                <div className="flex flex-row justify-start font-normal gap-1 items-center mt-10" style={{cursor: "pointer"}} onClick={() => setShowSportMenu(true)}>
                                     <IconBordered >
                                         <MdOutlineSubtitles size={40} />
                                     </IconBordered>
@@ -193,7 +195,7 @@ export default function RadioDifusor() {
                     <div className="flex flex-row flex-wrap items-center justify-center mt-[5rem] mb-[3rem]" style={{ zIndex: 12, alignContent: "space-between" }} >
                         <div />
                         {sportRecommendations[name].filter(x => x !== currentVideo).slice(0, 4).map((item, index) =>
-                            <div onClick={() => {setCurrentVideo(item[0]); setShowRecs(false)}} className="flex mr-[2rem]" key={index}>
+                            <div style={{cursor:"pointer"}} onClick={() => {setCurrentVideo(item[0]); setShowRecs(false)}} className="flex mr-[2rem]" key={index}>
                                 <img width={300} src={getThumbnailUrl(item[1])} style={{ borderRadius: "2rem", boxShadow: "10px 10px 10px grey" }} />
                             </div>)
                         }
