@@ -143,7 +143,7 @@ export default function RadioDifusor() {
                     {
                         !showSportMenu ?
                             (<div>
-                                <img src={olympicSports.find((s) => s.name == name).icon} alt="Radio Difusor Icon" />
+                                <img style={{borderRadius:"10px"}} src={olympicSports.find((s) => s.name == name).icon} alt="Radio Difusor Icon" />
                                 <div className="flex flex-row justify-start font-normal gap-1 items-center mt-10" style={{cursor: "pointer"}} onClick={() => setShowSportMenu(true)}>
                                     <IconBordered >
                                         <MdOutlineSubtitles size={40} />
@@ -170,7 +170,7 @@ export default function RadioDifusor() {
                                                 className="flex flex-col items-center justify-center rounded-lg bg-zinc-900"
                                                 onClick={() => setPreferredSport(card.name)}
                                             >
-                                                <img className="w-[250px] h-[120px]" src={card.icon} alt="Channel Icon" />
+                                                <img style={{borderRadius:"1rem"}} className="w-[250px] h-[120px]" src={card.icon} alt="Channel Icon" />
                                             </button>))
                                     }
                                 </div>
